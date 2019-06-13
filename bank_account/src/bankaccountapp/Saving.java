@@ -6,8 +6,8 @@ public class Saving extends Account {
   int safetyDepositBoxKey;
 
   // Constructor to initialize saving account
-  public Saving(String name) {
-    super(name);
+  public Saving(String name, String SSN, double initDeposit) {
+    super(name, SSN, initDeposit);
     System.out.println("NEW SAVING ACCOUNT");
     System.out.println("NAME : " + name);
   }
