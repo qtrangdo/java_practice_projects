@@ -2,6 +2,8 @@ package bankaccountapp;
 
 public class Checking extends Account {
   // List properties spectific to checking account
+  int debitCardNumber;
+  int debitCardPIN;
 
   // Constructor to initialize checking account
   public Checking(String name) {
