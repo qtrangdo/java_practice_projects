@@ -4,11 +4,11 @@ import bankaccountapp.app_interfaces.IBaseRate;
 
 public abstract class Account implements IBaseRate{
   // List common properties for checking and saving
-  String name;
-  String SSN;
-  String accountNumber;
-  double balance;
-  double rate;
+  private String name;
+  private String SSN;
+  private double balance;
+  protected String accountNumber;
+  protected double rate;
   static int index = 10001;
 
 
