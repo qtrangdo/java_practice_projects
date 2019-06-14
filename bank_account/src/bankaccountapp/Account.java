@@ -15,7 +15,6 @@ public abstract class Account {
     this.name = name;
     this.SSN = SSN;
     this.balance = initDeposit;
-    System.out.println(name + " " + SSN + " " + balance );
 
     // Set account number
     index++;
@@ -29,6 +28,14 @@ public abstract class Account {
     int randomNumber = (int) (Math.random() * Math.pow(10, 3));
     return lastTwoOfSSN + uniqueID + randomNumber;
   }
+
   // List common methods
+  public void showInfo() {
+    System.out.println(
+      "NAME: " + name + 
+      "\nACCOUNT NUMBER: " + accountNumber + 
+      "\nBALANCE: " + balance
+    );
+  }
 }
   
