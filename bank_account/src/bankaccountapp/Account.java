@@ -19,7 +19,7 @@ public abstract class Account {
 
     // Set account number
     index++;
-    System.out.println(setAccountNumber()); 
+    this.accountNumber = setAccountNumber(); 
   }
   
   // Generate 11-digit account number: 1 or 2 depends on checking/saving, last 2 digit of SSN, unique 5-digit number, random 3-digit number
