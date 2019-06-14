@@ -13,6 +13,11 @@ public class Checking extends Account {
     setDebitCard();
   }
 
+  @Override
+  public void setRate() {
+    rate = getBaseRate() * 1.15;
+  }
+
   private void setDebitCard() {
     this.debitCardNumber = (int) (Math.random() * Math.pow(10,12));
     this.debitCardPIN = (int) (Math.random() * Math.pow(10,4));

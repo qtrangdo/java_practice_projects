@@ -1,6 +1,8 @@
 package bankaccountapp;
 
-public abstract class Account {
+import bankaccountapp.app_interfaces.IBaseRate;
+
+public abstract class Account implements IBaseRate{
   // List common properties for checking and saving
   String name;
   String SSN;
@@ -19,8 +21,12 @@ public abstract class Account {
     // Set account number
     index++;
     this.accountNumber = setAccountNumber(); 
+
+    setRate();
   }
   
+  public abstract void setRate();
+
   // Generate 11-digit account number: 1 or 2 depends on checking/saving, last 2 digit of SSN, unique 5-digit number, random 3-digit number
   private String setAccountNumber() {
     String lastTwoOfSSN = this.SSN.substring(this.SSN.length() - 2);
@@ -34,7 +40,8 @@ public abstract class Account {
     System.out.println(
       "NAME: " + name + 
       "\nACCOUNT NUMBER: " + accountNumber + 
-      "\nBALANCE: " + balance
+      "\nBALANCE: " + balance + 
+      "\nRATE: " + rate + "%"
     );
   }
 }
