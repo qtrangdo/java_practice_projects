@@ -44,5 +44,29 @@ public abstract class Account implements IBaseRate{
       "\nRATE: " + rate + "%"
     );
   }
+
+  public void deposit(double amount) {
+    this.balance = this.balance + amount;
+    printBalance();
+  }
+
+  public void withdraw(double amount) {
+    if (amount <= this.balance) {
+      this.balance = this.balance - amount;
+    } else {
+      System.out.println("Not enough in the balance for the requested withdraw amount");
+    };
+    printBalance();
+  }
+
+  public void transfer(String toWhere, double amount) {
+    this.balance = this.balance - amount;
+    System.out.println("Tranfering: $" + amount + " to " + toWhere);
+    printBalance();
+  }
+
+  public void printBalance() {
+    System.out.println("YOUR CURRENT BALANCE IS $" + this.balance);
+  }
 }
   
